@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=US-ASCII" http-equiv="Content-Type">
+
+<title>class VersionCheck - versionchecker's versioncheck-1.0.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/versioncheck.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-rubyversion">::rubyversion</a>
+    
+    <li><a href="#method-i-have_at_least_version-3F">#have_at_least_version?</a>
+    
+    <li><a href="#method-i-have_version-3F">#have_version?</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./VersionCheck.html">VersionCheck</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class VersionCheck</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="VersionCheck.html">VersionCheck</a> is a ruby class provides tests
+against a packages  version  so we can determine if our code is running in
+the version we want or is running on a version later than the version we
+need.</p>
+
+<p>Naming convention used:</p>
+
+<pre>RUBY_VERSION 1.8.7 patch level 249
+is Rubyvesion.major = 1, VersionCheck.minor = 8, VersionCheck.update = 7
+VersionCheck.build = 249 or VersionCheck.patchlevel = 249</pre>
+
+<p>Special initializer, <a
+href="VersionCheck.html#method-c-rubyversion">::rubyversion</a>, sets up <a
+href="VersionCheck.html">VersionCheck</a> instance  we can use to check
+against current Ruby major,minor,update and patch level.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-build" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">build</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-major" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">major</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-minor" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">minor</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-patchlevel" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">patchlevel</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-update" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">update</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(major,minor=0,update=0,build=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set up the version we are going to check against.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/versioncheck.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">update</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">build</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Float</span>
+    <span class="ruby-identifier">major</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>,<span class="ruby-identifier">update</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@major</span> = <span class="ruby-identifier">major</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@minor</span> = <span class="ruby-identifier">minor</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">minor</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@update</span> = <span class="ruby-identifier">update</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">update</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span> 
+  <span class="ruby-ivar">@build</span> = <span class="ruby-identifier">build</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">build</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-rubyversion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rubyversion</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Short cut to setting up <a href="VersionCheck.html">VersionCheck</a>
+against current RUBY_VERSION and RUBY_PATCHLEVEL</p>
+          
+
+          
+          <div class="method-source-code" id="rubyversion-source">
+            <pre><span class="ruby-comment"># File lib/versioncheck.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rubyversion</span>
+  <span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>,<span class="ruby-identifier">update</span> = <span class="ruby-constant">RUBY_VERSION</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span> }
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>,<span class="ruby-identifier">update</span>, <span class="ruby-constant">RUBY_PATCHLEVEL</span>.<span class="ruby-identifier">to_i</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rubyversion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rubyversion-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-have_at_least_version-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_at_least_version?</span><span
+            class="method-args">(major, minor = nil, update = nil, build = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>have_at_least_version tests that the versien of RUBY is newer than the one
+we want. major, minor, update and build are integers.  If update and or
+build are missing, then any update or build version will return true, as
+long as the major and minor numbers match,  or the running Ruby verion
+major.minor numbers are for a newer version.</p>
+          
+
+          
+          <div class="method-source-code" id="have_at_least_version-3F-source">
+            <pre><span class="ruby-comment"># File lib/versioncheck.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_at_least_version?</span>(<span class="ruby-identifier">major</span>, <span class="ruby-identifier">minor</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">update</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">build</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Float</span>
+    <span class="ruby-identifier">major</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>,<span class="ruby-identifier">update</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@major</span> <span class="ruby-comment">#Could true</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">minor</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-comment">#Being asked to test minor level</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">minor</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@minor</span> <span class="ruby-comment">#Could be true</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">update</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-comment">#Being asked to test update level</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">update</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@update</span> <span class="ruby-comment">#Could be true</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">build</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-comment">#Being asked to test the build version</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-identifier">build</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@build</span> <span class="ruby-comment">#have at least the required patch level.</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-comment">#update was equal</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-identifier">update</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@update</span> <span class="ruby-comment">#current version is newer</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-comment">#major and minor was equal.</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">minor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@minor</span> <span class="ruby-comment">#true if current version is newer</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-comment">#major was equal.</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">major</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@major</span> <span class="ruby-comment">#true, if current version is newer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_at_least_version-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_at_least_version-3F-method -->
+
+    
+      <div id="method-i-have_version-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_version?</span><span
+            class="method-args">(major, minor = nil, update = nil, build = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>have_version tests that the versien of RUBY is the one we want. Returns
+true if match to arguments is exact, otherwise false.</p>
+
+<pre>If update and build are not specified, they are not tested for.</pre>
+
+<p>Can take:</p>
+
+<pre>a single float argument. 
+ e.g. VersionCheck.have_version?(1.8)      Tests for version 1.8 with any update or build version
+a single string argument. 
+ e.g. VersionCheck.have_version?(&quot;1&quot;)      Tests for version 1 with any minor, update or build version
+ e.g. VersionCheck.have_version?(&quot;1.8&quot;)    Tests for version 1.8 with any update or build version
+      VersionCheck.have_version?(&quot;1.8.7&quot;)  Tests for version 1.8.7 with and build version
+Integer arguments major, minor, update and build
+ e.g. VersionCheck.have_version?(1)         Tests for version 1 with any minor, update or build version
+      VersionCheck.have_version?(1,8)       Tests for version 1.8 with any update or build version
+      VersionCheck.have_version?(1,8,7)     Tests for version 1.8.7 with and build version
+      VersionCheck.have_version?(1,8,7,249) Test for 1.8.7 build 249</pre>
+          
+
+          
+          <div class="method-source-code" id="have_version-3F-source">
+            <pre><span class="ruby-comment"># File lib/versioncheck.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_version?</span>(<span class="ruby-identifier">major</span>, <span class="ruby-identifier">minor</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">update</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">build</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Float</span>
+    <span class="ruby-identifier">major</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">major</span>,<span class="ruby-identifier">minor</span>,<span class="ruby-identifier">update</span> = <span class="ruby-identifier">major</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">major</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@major</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">minor</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">minor</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@minor</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">update</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">update</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@update</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">build</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">build</span> <span class="ruby-operator">!=</span>  <span class="ruby-ivar">@build</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_version-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_version-3F-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="VersionCheck.html#method-i-to_s">#to_s</a> returns the current
+Ruby version and build as a string.</p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/versioncheck.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{@major}.#{@minor}.#{@update} Build #{@build}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
