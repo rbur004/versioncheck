@@ -1,5 +1,7 @@
 doc/
+gitdoc/
 pkg/
 Private/
 test_data/*.out
 .autotest
+.yardoc/
