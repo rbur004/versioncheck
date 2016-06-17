@@ -3,12 +3,15 @@
 require 'rubygems'
 require 'hoe'
 #require './lib/versioncheck.rb'
-Hoe.plugin :minitest
+Hoe.plugin :yard
 
 Hoe.spec 'versioncheck' do 
-  self.rubyforge_name = 'versionchecker'
+  #self.rubyforge_name = 'versionchecker'
   developer 'Rob Burrowes', 'r.burrowes@auckland.ac.nz'
-  remote_rdoc_dir = '' # Release to root
+  #remote_rdoc_dir = '' # Release to root
+
+  self.yard_title = 'versionchecker'
+  self.yard_options = ['--markup', 'markdown', '--protected']
   #extra_deps << 'whatevs' 
 end
 
