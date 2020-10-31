@@ -1,6 +1,6 @@
 = versioncheck
 
-* http://rbur004.github.com/versioncheck/
+* http://rbur004.github.io/versioncheck/
 * Source https://github.com/rbur004/versioncheck
 * Gem https://rubygems.org/gems/VersionCheck
 
