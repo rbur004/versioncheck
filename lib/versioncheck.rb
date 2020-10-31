@@ -1,22 +1,39 @@
-#VersionCheck is a ruby class provides tests against a packages  version 
-#so we can determine if our code is running in the version we want
-#or is running on a version later than the version we need.
+# VersionCheck is a ruby class provides tests against a packages  version 
+# so we can determine if our code is running in the version we want
+# or is running on a version later than the version we need.
 #
-#Naming convention used:
+# Naming convention used:
 #  RUBY_VERSION 1.8.7 patch level 249
 #  is Rubyvesion.major = 1, VersionCheck.minor = 8, VersionCheck.update = 7
 #  VersionCheck.build = 249 or VersionCheck.patchlevel = 249
 #
-#Special initializer, VersionCheck.rubyversion, sets up VersionCheck instance 
-#we can use to check against current Ruby major,minor,update and patch level.
-
+# Special initializer, VersionCheck.rubyversion, sets up VersionCheck instance 
+# we can use to check against current Ruby major,minor,update and patch level.
+# Methods can take:
+#  a single float argument. 
+#   e.g. VersionCheck.have_version?(1.8)      Tests for version 1.8 with any update or build version
+#  a single string argument. 
+#   e.g. VersionCheck.have_version?("1")      Tests for version 1 with any minor, update or build version
+#   e.g. VersionCheck.have_version?("1.8")    Tests for version 1.8 with any update or build version
+#        VersionCheck.have_version?("1.8.7")  Tests for version 1.8.7 with and build version
+#  Integer arguments major, minor, update and build
+#   e.g. VersionCheck.have_version?(1)         Tests for version 1 with any minor, update or build version
+#        VersionCheck.have_version?(1,8)       Tests for version 1.8 with any update or build version
+#        VersionCheck.have_version?(1,8,7)     Tests for version 1.8.7 with and build version
+#        VersionCheck.have_version?(1,8,7,249) Test for 1.8.7 build 249
+#
 class VersionCheck
   VERSION = '1.0.0' #version of class VersionCheck
   
   attr_accessor :major, :minor, :update, :build
   alias patchlevel build
   
-  #Set up the version we are going to check against.
+  # Set up the version we are going to check against.
+  #
+  # @param major [Integer|Float|String] Major version number or a partial or full string version e.g. "1.8.7"
+  # @param minor [Integer] Minor version number
+  # @param update [Integer] Update, within a minor version
+  # @param build [Integer] Patch or build, within an Update
   def initialize(major,minor=0,update=0,build=0)
     if major.class == Float
       major = major.to_s
@@ -31,26 +48,21 @@ class VersionCheck
   end    
   
   #Short cut to setting up VersionCheck against current RUBY_VERSION and RUBY_PATCHLEVEL
+  #
+  # @return [Array] Major, minor, update, patch level, of the Ruby interpretor
   def self.rubyversion
     major,minor,update = RUBY_VERSION.split('.').collect { |i| i.to_i }
     self.new(major,minor,update, RUBY_PATCHLEVEL.to_i)
   end
   
-  #have_version tests that the versien of RUBY is the one we want.
-  #Returns true if match to arguments is exact, otherwise false.
+  # have_version? tests that the versien of RUBY is the one we want.
   #  If update and build are not specified, they are not tested for.
-  #Can take:
-  #  a single float argument. 
-  #   e.g. VersionCheck.have_version?(1.8)      Tests for version 1.8 with any update or build version
-  #  a single string argument. 
-  #   e.g. VersionCheck.have_version?("1")      Tests for version 1 with any minor, update or build version
-  #   e.g. VersionCheck.have_version?("1.8")    Tests for version 1.8 with any update or build version
-  #        VersionCheck.have_version?("1.8.7")  Tests for version 1.8.7 with and build version
-  #  Integer arguments major, minor, update and build
-  #   e.g. VersionCheck.have_version?(1)         Tests for version 1 with any minor, update or build version
-  #        VersionCheck.have_version?(1,8)       Tests for version 1.8 with any update or build version
-  #        VersionCheck.have_version?(1,8,7)     Tests for version 1.8.7 with and build version
-  #        VersionCheck.have_version?(1,8,7,249) Test for 1.8.7 build 249
+  #
+  # @param major [Integer|Float|String] Major version number or a partial or full string version e.g. "1.8.7"
+  # @param minor [Integer] Minor version number
+  # @param update [Integer] Update, within a minor version
+  # @param build [Integer] Patch or build, within an Update
+  # @return [Boolean] true if match to arguments is exact, otherwise false.
   def have_version?(major, minor = nil, update = nil, build = nil)
     if major.class == Float
       major = major.to_s
@@ -68,11 +80,15 @@ class VersionCheck
     end
   end
 
-  #have_at_least_version tests that the versien of RUBY is newer than the one we want.
-  #major, minor, update and build are integers. 
-  #If update and or build are missing, then any update or build version
-  #will return true, as long as the major and minor numbers match, 
-  #or the running Ruby verion major.minor numbers are for a newer version.
+  # have_at_least_version? tests that the versien of RUBY is newer than the one we want.
+  # If update and or build are missing, then any update or build version
+  # will return true, as long as the major and minor numbers match, 
+  # or the running Ruby verion major.minor numbers are for a newer version.
+  #
+  # @param major [Integer|Float|String] Major version number or a partial or full string version e.g. "1.8.7"
+  # @param minor [Integer] Minor version number
+  # @param update [Integer] Update, within a minor version
+  # @param build [Integer] Patch or build, within an Update
   def have_at_least_version?(major, minor = nil, update = nil, build = nil)
     if major.class == Float
       major = major.to_s
@@ -101,10 +117,11 @@ class VersionCheck
     return major < @major #true, if current version is newer
   end
 
-  #to_s returns the current Ruby version and build as a string.
+  # to_s returns the current Ruby version and build as a string.
+  #
+  # @return [String] Version as a string
   def to_s
     "#{@major}.#{@minor}.#{@update} Build #{@build}"
   end
-  
   
 end
