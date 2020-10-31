@@ -1,10 +1,10 @@
-= versioncheck
+# versioncheck
 
 * Docs :: http://rbur004.github.io/versioncheck/
 * Source :: https://github.com/rbur004/versioncheck
 * Gem :: https://rubygems.org/gems/VersionCheck
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 VersionCheck is a ruby class provides tests against a packages  version 
 so we can determine if our code is running in the version we want
@@ -13,10 +13,10 @@ or is running on a version later than the version we need.
 Special initializer, VersionCheck.rubyversion, sets up VersionCheck instance 
 we can use to check against current Ruby major,minor,update and patch level.
 
-== FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS:
 
 
-== SYNOPSIS:
+## SYNOPSIS:
 
 	require 'rubygems'
 	require 'versioncheck'
@@ -45,15 +45,15 @@ we can use to check against current Ruby major,minor,update and patch level.
 
 
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
 * require 'rubygems'
 
-== INSTALL:
+## INSTALL:
 
 * sudo gem install versioncheck
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
