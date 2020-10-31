@@ -1,7 +1,10 @@
 doc/
 gitdoc/
 pkg/
-Private/
-test_data/*.out
 .autotest
+.yard
 .yardoc/
+History.txt
+.DS_Store
+lib/.DS_Store
+test/.DS_Store
